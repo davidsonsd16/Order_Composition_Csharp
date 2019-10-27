@@ -1,5 +1,6 @@
 ﻿using System;
 using Order_Composition_Csharp.Entities;
+using Order_Composition_Csharp.Entities.Enums;
 
 namespace Order_Composition_Csharp {
     class Program {
@@ -14,10 +15,11 @@ namespace Order_Composition_Csharp {
 
             Console.WriteLine(orderItem);
 
-            product.Price = 1200.00;
 
-            Console.WriteLine(product);
-            Console.WriteLine(orderItem);
+            Order order = new Order(client, Enum.Parse<OrderStatus>("Processing"));
+            order.AddItem(orderItem);
+            Console.WriteLine(order);
+            
         }
     }
 }
