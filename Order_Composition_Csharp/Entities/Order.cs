@@ -36,6 +36,7 @@ namespace Order_Composition_Csharp.Entities {
         }
         public override string ToString() {
             StringBuilder sb = new StringBuilder();
+            sb.AppendLine("ORDER SUMMARY:");
             sb.AppendLine("Order moment: " + Date);
             sb.AppendLine("Order status: " + Status);
             sb.AppendLine(Client.ToString());
@@ -43,6 +44,7 @@ namespace Order_Composition_Csharp.Entities {
             foreach(OrderItem item in Items) {
                 sb.AppendLine(item.ToString());
             }
+            sb.AppendLine("Total price: $" + Total().ToString("F2", CultureInfo.InvariantCulture));
             return sb.ToString();
         }
     }
