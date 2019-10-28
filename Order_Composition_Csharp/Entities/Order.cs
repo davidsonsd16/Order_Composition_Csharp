@@ -45,6 +45,7 @@ namespace Order_Composition_Csharp.Entities {
                 sb.AppendLine(item.ToString());
             }
             sb.AppendLine("Total price: $" + Total().ToString("F2", CultureInfo.InvariantCulture));
+
             return sb.ToString();
         }
     }
